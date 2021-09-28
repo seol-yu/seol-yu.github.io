@@ -1,0 +1,32 @@
+.seolyuIntro {
+    animation: seolyuIntro 3s steps(51), lineBlink 500ms steps(51) infinite normal;
+    border-right: 1px solid rgba(206, 8, 107, 0.548);
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: consolas;
+    width: 51ch;
+    margin-top: 25px;
+    line-height: 30px;
+}
+
+.webPub {
+    height: 74px;
+}
+
+@keyframes seolyuIntro {
+    0% {
+        width: 0ch;
+    }
+    100% {
+        width: 51ch;
+    }
+}
+
+@keyframes lineBlink {
+    from {
+        border-right-color: rgba(206, 8, 107, 0.548);
+    }
+    to {
+        border-right-color: transparent;
+    }
+}

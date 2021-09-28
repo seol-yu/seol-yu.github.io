@@ -1,0 +1,278 @@
+#pdfResume {
+    margin-top: -5%;
+    width: 700px; 
+    height: 800px;
+}
+
+.aboutSeolyu span {
+    z-index: 3;
+}
+
+.seolyuProfileBox {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.profileWrap {
+    width: 40%;
+    z-index: 3;
+}
+
+.profileImg {
+    width: 152px;
+    height: 152px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.profileImg img {
+    width: 100%;
+    height: 100%;
+}
+
+.seolyuDetail .top {
+    display: flex;
+    align-items: center;
+}
+
+.seolyuDetail {
+    z-index: 3;
+}
+
+.seolyuDetail .seolyuName .seolyuLee {
+    font-size: 35px;
+    font-weight: 200;
+    display: inline-block;
+    padding-right: 25px;
+    margin-top: 30px;
+}
+
+.seolyuDetail .top>a {
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    color: #262626;
+    padding: 3px 20px;
+    font-weight: 600;
+    vertical-align: text-bottom;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.seolyuDetail .seolyuDes {
+    display: flex;
+    height: 50px;
+    padding: 18px 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.seolyuDetail .seolyuDes {
+    margin-right: 35px;
+}
+
+.seolyuDetail .seolyuDes .seolyuKorea {
+    line-height: 50px;
+}
+
+.seolyuDetail .seolyuDes .koreaBox {
+    float: left;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 50px;
+}
+
+.korea {
+    transform: scale(0.15);
+}
+
+#mainContainer .sInner .contentsContainer .pic {
+    z-index: 3;
+}
+
+.seolyuTab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    border-top: 1px solid rgba(var(--b38, 219, 219, 219), 1)
+}
+
+.seolyuTab .aboutSeolyu>span {
+    margin-top: 10px;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+}
+
+.seolyuTab .aboutSeolyu>span:nth-child(1) {
+    margin-right: 50px;
+}
+
+.seolyuTab .aboutSeolyu>span:nth-child(2) {
+    margin-right: 50px;
+}
+
+.seolyuTab .aboutSeolyu>span:nth-child(3) {
+    margin-right: 50px;
+}
+
+.seolyuTab .aboutSeolyu>span:after {
+    content: '';
+    width: 0;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    top: -12px;
+    transition: all 0.5s;
+    background: #f09dbf;
+}
+
+.seolyuTab .aboutSeolyu>span.on:after {
+    width: 100%;
+}
+
+.contentsContainer {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    display: none;
+}
+
+.contentsContainer.active {
+    display: flex;
+}
+
+.contentsContainer .pic {
+    max-width: 300px;
+    max-height: 300px;
+    overflow: hidden;
+    margin-bottom: 18px;
+}
+
+.contentsContainer .pic img {
+    width: 100%;
+    height: 100%;
+}
+
+
+@media screen and (max-width:1000px) {
+
+    .contentsContainer {
+        justify-content: center;
+
+    }
+
+    .contentsContainer .pic {
+        margin: 10px;
+    }
+}
+
+
+
+#container {
+    background: #fafafa00;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#mainContainer {
+    padding-top: 135px;
+    display: flex;
+    justify-content: center;
+    order: 1;
+}
+
+#mainContainer .sInner {
+    width: 935px;
+    position: relative;
+}
+
+
+@media screen and (max-width: 1100px) {
+    #header .h_inner {
+        padding: 0 20px;
+    }
+
+    #mainContainer .sInner {
+        width: initial !important;
+        max-width: 935px;
+    }
+
+    .sideBox {
+        display: none;
+    }
+
+    .sInner .contents_box {
+        float: none;
+    }
+
+    .contents {
+        max-width: 600px;
+        margin: 0 auto 40px;
+    }
+
+    .hidden_menu {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 620px) {
+
+    #mainContainer {
+        margin-top: -40px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    #header .searchField {
+        display: none;
+    }
+
+    .hiddenMenu {
+        width: 100%;
+        top: 77px;
+    }
+
+
+    .seolyuTab .aboutSeolyu>span:nth-child(1) {
+        margin-right: 30px;
+    }
+
+    .seolyuTab .aboutSeolyu>span:nth-child(2) {
+        margin-right: 30px;
+    }
+
+    .seolyuTab .aboutSeolyu>span:nth-child(3) {
+        margin-right: 30px;
+    }
+
+
+    .seolyuDetail {
+        transform: scale(0.7);
+        margin-left: -20px;
+    }
+    
+    .koreaBox {
+        margin-right: -70px;
+    }
+
+    #pdfResume {
+        margin-top: -5%;
+        width: 370px; 
+        height: 700px;
+    }
+}
+
+@media screen and (max-width: 480px) {}

@@ -1,0 +1,1148 @@
+.syText {
+    font-size: 13.3px;
+    font-weight: bold;
+    /* color: pink; */
+}
+
+.mText {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.sText {
+    font-size: 12px;
+}
+
+.htmlTag {
+    color: dodgerblue;
+}
+
+.htmlTagText {
+    color: rgb(235, 102, 157);
+}
+
+.htmlTagCon {
+    color:rgb(84, 167, 109)
+}
+
+body {
+    background: hsl(0, 0%, 98%);
+    font-family: consolas;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+#scrollPath {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+#progressbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    /* height: 103px; */
+    background: linear-gradient(to top,  #008aff, #00ffe7);
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+    0%, 100% {
+        filter: hue-rotate(0deg);
+    }
+    50% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+#progressbar:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    filter: blur(10px);
+}
+
+#progressbar:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    filter: blur(30px);
+}
+
+#header {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    /* background: rgba(112, 51, 51, 0.801); */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#header .inner {
+    width: 975px;
+    height: 77px;
+    margin: 0 auto;
+    /* background: palevioletred; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header .inner .logo > a {
+    color: transparent;
+}
+
+#header .inner .logo .logoImageBox .logoImage {
+    position: relative;
+    /* margin-right: 30px; */
+}
+
+#header .inner .logo .logoImageBox .logoImage:after {
+    content: '';
+    width: 1px;
+    height: 28px;
+    background: rgb(0, 0, 0);
+    position: absolute;
+    /* right: -15px; */
+    /* top: -4px; */
+    /* transition: all .5s; */
+}
+
+#header .inner .logo div {
+    vertical-align: middle;
+}
+
+.logoImageBox {
+    /* display: inline-block; */
+    float: left;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    /* background: orange; */
+}
+
+.logoImage {
+    /* display: inline-block; */
+    transform: scale(0.4);
+}
+
+.logoTextBox {
+    /* display: inline-block; */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 80px;
+    margin-left: 20px;
+    /* background: red; */
+}
+
+.logoText {
+    /* display: inline-block; */
+    transform: scale(0.32);
+}
+
+.logoText:hover {
+    animation: logoText 1s forwards;
+  }
+
+@keyframes logoText {
+    0% {
+        opacity: 0.8;
+        transform: scale(0.33);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(0.34);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(0.33);
+    }
+}
+
+
+#header .searchBox {
+    position: relative;
+    /* width: 25%; */
+}
+
+#searchField {
+    width: 185px;
+    height: 28px;
+    background: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    padding: 3px 30px;
+    color: #999;
+    font-weight: 400;
+    text-align: left;
+    font-size: 14px;
+    outline: none;
+}
+
+#searchField::placeholder {
+    font-size: 0;
+}
+
+#searchField:focus::placeholder {
+    font-size: 14px;
+}
+
+#header .searchBox .fakeField {
+    position: absolute;
+    left: 45%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    /* vertical-align: middle; */
+}
+
+.searchText {
+    line-height: 480%;
+    margin-left: -20px;
+}
+
+#searchField:focus~.fakeField>span:nth-child(1) {
+    transform: translateX(-90px);
+}
+
+#searchField:focus~.fakeField>span:nth-child(2) {
+    display: none;
+}
+
+.rightIcons {
+    /* width: 35%; */
+    margin-left: -5px;
+}
+
+.cameraIconBox {
+    /* display: inline-block; */
+    float: left;
+    overflow: hidden;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    /* background: orange; */
+}
+
+.cameraIcon {
+    /* display: inline-block; */
+    transform: scale(0.13);
+}
+
+.compassIconBox {
+    float: left;
+    /* overflow: hidden; */
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    transform: scale(0.9);
+    margin-top: 3px;
+}
+
+#compassDuck {
+    animation: duck-ani 2s infinite linear alternate-reverse;
+
+}
+
+@keyframes duck-ani {
+    from {
+        transform: rotateX(-20deg);
+        transform: rotateY(-20deg);
+        transform: rotateZ(-3deg);
+    }
+    to {
+        transform: rotateX(20deg);
+        transform: rotateY(20deg);
+        transform: rotateZ(3deg);
+    }
+}
+
+.compassIcon {
+    /* display: inline-block; */
+    transform: scale(0.13);
+}
+
+.heartIconBox {
+    /* display: inline-block; */
+    float: left;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    /* background: orange; */
+}
+
+.heartIcon {
+    /* display: inline-block; */
+    transform: scale(0.1);
+}
+
+.heartIcon:hover {
+    /* display: inline-block; */
+    transform: scale(0.13);
+}
+
+.userOutlineIconBox {
+    /* display: inline-block; */
+    /* float: left; */
+    /* overflow: hidden; */
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px; 
+    transform: scale(0.85);
+    margin-top: 5px;
+    margin-left: 0px;
+}
+
+#seolyuStar {
+    animation: seolyuStar-ani 3s infinite linear alternate-reverse;
+}
+
+@keyframes seolyuStar-ani {
+    0% {
+        transform: rotateY(50deg);
+        transform-origin: right top;
+    }
+    50% {
+        transform: rotateX(10deg);
+        transform-origin: right top;
+    }
+    100% {
+        transform: rotateY(50deg);
+        transform-origin: right top;
+    }
+}
+
+.userOutlineIcon {
+    /* display: inline-block; */
+    transform: scale(0.13);
+}
+
+.moreIconBox {
+    /* display: inline-block; */
+    /* float: left; */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    /* background: orange; */
+}
+
+.moreIcon {
+    /* display: inline-block; */
+    transform: scale(0.13);
+}
+
+.moreIcon:hover {
+    /* display: inline-block; */
+    transform: scale(0.14);
+}
+
+#header .rightIcons {
+    /* width: 132px; */
+    display: flex;
+    justify-content: space-between;
+}
+
+#header .rightIcons > div {}
+
+
+#mainContainer {
+    padding-top: 130px;
+    display: flex;
+    justify-content: center;
+}
+
+#mainContainer .inner {
+    width: 935px;
+    /* height: 500px; */
+    /* background: pink; */
+    position: relative;
+}
+
+.contentsBox {
+
+}
+
+.contents {
+    width: 614px;
+    /* height: 500px; */
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    border-radius: 3px;
+    margin-bottom: 60px;
+    background: white;
+
+}
+
+.contents .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.contents .top .profileImg {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.contents .top .profileImg img {
+    width: 100%;
+}
+
+.contents .top .userContainer {
+    display: flex;
+}
+
+.userName {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contents .imgSection {
+    overflow: hidden;
+    z-index: 3;
+}
+
+.contents .imgSection img {
+    width: 100%;
+}
+
+.ACAC {
+    overflow: hidden;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    height: 460px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.ACACimg {
+    position: relative;
+    /* top: -140px; */
+}
+
+.transInner {
+    z-index: 3;
+}
+
+.heartOutlineIconBox {
+    /* display: inline-block; */
+    float: left;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    /* background: orange; */
+}
+
+.heartOutlineIcon {
+    /* display: inline-block; */
+    transform: scale(0.6);
+}
+
+.pichu {
+    float: left;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    transform: scale(0.7);
+    margin-bottom: 2px;
+    animation: pichu-ani 0.8s infinite linear alternate;
+}
+
+@keyframes pichu-ani {
+    from {
+        transform: scale(0.65);
+    }
+    to {
+        transform: scale(0.75);
+    }
+}
+
+.pichu:hover {
+    animation-play-state: paused;
+    transform: scale(1);
+}
+
+#pHead {
+    animation: pichuHead-ani 0.6s infinite alternate cubic-bezier(0.46, 0.18, 0.66, 0.93);
+}
+
+@keyframes pichuHead-ani {
+    to { 
+        transform: rotateX(-10deg);
+        transform-origin: bottom; 
+    }
+}
+
+#pRose {
+    animation: pichuRose-ani 1s infinite alternate;
+}
+
+@keyframes pichuRose-ani {
+    to {
+        transform: rotateY(-10deg);
+        transform-origin: left; 
+    }
+}
+
+.bubbleIconBox {
+    /* display: inline-block; */
+    float: left;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    /* background: orange; */
+}
+
+.bubbleIcon {
+    /* display: inline-block; */
+    transform: scale(0.9);
+}
+
+.webPub {
+    float: left;
+    line-height: 75px;
+    font-weight: bold;
+    
+}
+
+.shareIconBox {
+    /* display: inline-block; */
+    float: left;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    /* background: orange; */
+}
+
+.shareIcon {
+    /* display: inline-block; */
+    transform: scale(0.5);
+}
+
+.bookmarkIconBox {
+    /* display: inline-block; */
+    float: left;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    margin-right: 10px;
+    /* background: orange; */
+}
+
+.bookmarkIcon {
+    /* display: inline-block; */
+    transform: scale(0.45);
+}
+
+.contents .bottomIcons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 10px 20px: */
+}
+
+.contents .bottomIcons .leftIcons {
+    display: flex;
+}
+
+
+.contents .bottomIcons .leftIcons > div {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.contents .bottomIcons .rightIcon > div {
+    cursor: pointer;
+}
+
+
+.contents .likes {
+    padding: 5px 20px;
+    color: #262626;
+}
+
+.contents .commentContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+}
+
+.contents .commentContainer .comment {
+    display: flex;
+    font-size: 14px;
+}
+
+.contents .commentContainer .comment .nickName {
+    margin-right: 10px;
+}
+
+.smallHeartOutlineIconBox {
+    /* display: inline-block; */
+    float: left;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    /* background: orange; */
+}
+
+.smallHeartOutlineIcon {
+    /* display: inline-block; */
+    transform: scale(0.25);
+}
+
+.contents .timer {
+    font-size: 10px;
+    letter-spacing: 0.2px;
+    color: #999;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+    padding: 10px 20px;
+}
+
+.contents .commentField {
+    min-height: 56px;
+    padding: 0 20px;
+    position: relative;
+}
+
+.contents .commentField input {
+    width: 100%;
+    height: 56px;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.contents .commentField input:focus ~ .uploadBtn{
+    pointer-events: initial;
+    opacity: 1;
+}
+
+.contents .commentField .uploadBtn {
+    color: #3897f0;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    pointer-events: none;
+    opacity: 0.6;
+} 
+
+
+.sideBox {
+    width: 293px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.sideBox .profileThumb {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.sideBox .profileThumb img {
+    width: 100%;
+    height:100%;
+}
+
+
+
+.seolyuClock {
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: url(imgs\clock\clock.png); */
+    background-size: cover;
+    /* border: 4px solid #091921; */
+    /* border-radius: 50%; */
+    /* box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+                inset 0 -15px 15px rgba(43, 5, 5, 0.05),
+                0 15px 15px rgba(0, 0, 0, 3),
+                inset 0 15px 15px rgba(0, 0, 0, 3); */
+}
+
+.seolyuClock:before {
+    /* content: ''; */
+    /* position: absolute; */
+    /* width: 15px; */
+    /* height: 15px; */
+    /* background: #fff; */
+    /* border-radius: 50%; */
+    /* z-index: 10000; */
+    /* background: url('paw.png'); */
+}
+
+.seolyuClock .syHour,
+.seolyuClock .syMin,
+.seolyuClock .sySec {
+    position: absolute;
+}
+
+.seolyuClock .syHour, .hr {
+    width: 160px;
+    height: 160px;
+}
+
+.seolyuClock .syMin, .mn {
+    width: 190px;
+    height: 190px;
+}
+
+.seolyuClock .sySec, .sc {
+    width: 230px;
+    height: 230px;
+}
+
+.hr, .mn, .sc {
+    display: flex;
+    justify-content: center;
+    /* position: absolute; */
+    /* border-radius: 50%; */
+}
+
+.hr:before 
+{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 80px;
+    background: #b80d62;
+    z-index: 10;
+    border-radius: 6px 6px 0 0;
+}
+
+.mn:before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    background: #1e5e05;
+    z-index: 11;
+    border-radius: 6px 6px 0 0;
+}
+
+.sc:before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 150px;
+    background: #ebbb1e;
+    z-index: 12;
+    border-radius: 6px 6px 0 0;
+}
+
+.clockAndBowl {
+    display: flex;
+}
+
+.myClock {
+    float: left;
+    transform: scale(0.6);
+    margin-left: 10px;
+}
+
+.fishBowl {
+    transform: scale(0.4);
+    margin-left: 100px;
+    margin-top: 100px;
+}
+
+.sideBox .seolyuCard {
+    width: 293px;
+    height: 150px;
+    align-items: center;
+    color:#262626;
+}
+
+.seolyuIdleHeader {
+    width: 100%;
+    height: 20px;
+    background-color: rgb(211, 82, 125);
+    line-height: 20px;
+}
+
+.seolyuIdleLogo {
+    float: left;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    margin-left: 3px;
+    margin-right: 5px;
+}
+
+.seolyuIdleLogoIcon {
+    transform: scale(0.1);
+}
+
+.seolyuIdleText {
+    color: white;
+}
+
+.seolyuIdleSide {
+    background-color: rgb(235, 150, 177);
+    width: 7.6%;
+    height: 130px;
+    float: left;
+    /* overflow: hidden; */
+}
+
+.seolyuIdleHTML {
+    width: 92.4%;
+    height: 130px;
+    float: left;
+    background-color: rgb(247, 229, 232);
+}
+
+
+.sideBox .detail .id {
+    margin-bottom: 5px;
+}
+
+.sideBox .detail .koName {
+    font-size: 12px;
+    color:#999;
+}
+
+
+.sideBox > article {
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 3px;
+    margin-bottom: 20px;
+    width: 291px;
+    font-size: 14px;
+    color:#262626;
+    font-weight: bold;
+    background: rgba(29, 6, 6, 0);
+}
+
+.sideBox > article > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    color:#999;
+}
+
+
+.sideBox > article > header .more {
+    font-size: 12px;
+    color:#262626;
+    cursor: pointer;
+}
+
+.thumbUser {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.thumbUser .profileThumb {
+    width: 34px;
+    height: 34px;
+}
+
+.thumbUser .time {
+    font-size: 10px;
+    letter-spacing: 0.2px;
+    color:#999;
+}
+
+.sideBox .scrollInner {
+    height: 182px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /*overflow:hidden auto;*/
+}
+
+.contact {
+    text-align: center;
+}
+
+#letter:hover {
+    /* transform: scale(1.01); */
+    animation: letter-ani 2s infinite alternate-reverse;
+}
+
+@keyframes letter-ani {
+    100% {
+        transform: translate(10px, 10px);
+        transform: scale(1.02);        
+    }
+}
+
+
+.hiddenMenu {
+    display: none;
+    width: 600px;
+    /*background: red;*/
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100px;
+    overflow: hidden;
+    /* border: 1px solid rgba(0,0,0,0.09); */
+    border-radius: 3px;
+}
+
+.hiddenMenu .scrollInner {
+    height: 100px;
+    width: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.hiddenMenu .scrollInner .user {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 15px;
+    justify-content: space-between;
+}
+
+.hiddenMenu .scrollInner .user .id {
+    font-size: 12px;
+    color:#262626;
+}
+
+.hiddenMenu .thumbImg {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.hiddenMenu .thumbImg img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 1000px 이하로 줄었을 때 */
+@media screen and (max-width: 1000px) {
+    #header .inner {
+        width: 97.5%;
+    }
+
+    #mainContainer {
+        padding-top: 220px;
+    }
+
+    #mainContainer .inner {
+        width: 93.5%;
+        /* display: grid; */
+            /* grid-template-columns: repeat(10, 1fr); */
+            /* grid-template-areas: */
+            /* ". box box box box box box box box ." */
+    }
+
+    .contentsBox {
+        margin-top: 4%;
+        width: 100%;
+        display: flex;
+        /* width: 90px; */
+        flex-direction: column;
+        align-items: center;
+        /* display: grid; */
+        /* grid-area: box; */
+    }
+    
+    .sideBox {
+        display: none;
+    }
+
+    .hiddenMenu {
+        display: block;
+    }
+
+    .sideBox .seolyuCard {
+        /* float: left; */
+        width: 293px;
+        height: 150px;
+        align-items: center;
+        color:#262626;
+    }
+
+    .seolyuClock {
+        margin-left: -200px;
+    }
+
+    .fishBowl2 {
+        transform: scale(0.3);
+        margin-top: 40px;
+        margin-right: -300px;
+    }
+
+    .contact {
+        transform: scale(0.15);
+        margin-right: -370px;
+        margin-top: 350px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+
+    #header .searchBox {
+        display: none;
+    }
+
+    .sideBox {
+        display: none;
+    }
+
+    .hiddenMenu {
+        display: block;
+        width: auto;
+    }
+
+    #hiddenMenu {
+        height: 900px;
+    }
+
+    .seolyuCard {
+        margin: 0 auto;
+        width: 350px;
+    }
+
+    .fishBowl2 {
+        transform: scale(0.25);
+        margin-top: 80px;
+        margin-right: -230px;
+    }
+
+    .contentsBox {
+        margin-top: 40px;
+    }
+
+    .contents {
+        width: 90%;
+    }
+
+    .top {
+        /* margin-top: -10px; */
+        /* margin-bottom: -50px; */
+    }
+
+    .ACAC {
+        height: 280px;
+    }
+
+    .ACACimg {
+        position: relative;
+        top: 0px;
+    }
+
+    .bottomIcons {
+        width: 90%;
+        margin-top: -40px;
+    }
+
+    .pichu {
+        transform: scale(1.1);
+        margin-left: 30px;
+        margin-bottom: 10px;
+    }
+
+    .webPub {
+        display: none;
+    }
+
+    .rightIcon {
+        transform: scale(1.4);
+    }
+
+    .seolyuClock {
+        transform: scale(0.7);
+        margin-top: -130px;
+        margin-left: -100px;
+        float: left;
+    }
+
+    #myClock {
+        margin-left: -100px;
+    }
+
+    #fishBowl {
+        transform: scale(0.3);
+        margin-left: 5px;
+        margin-top: 0px;
+    }
+
+    #contact {
+        transform: scale(0.2);
+        margin-right: -200px;
+        padding-top: 10px;
+    }
+}
